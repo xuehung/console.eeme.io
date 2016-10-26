@@ -1,0 +1,78 @@
+---
+layout: default
+---
+
+<script>
+
+  $(function(){
+    $("#signup-submit-btn").click(function(event){
+      event.preventDefault();
+      var email = $("input[name='email']").val();
+      var organization = $("input[name='organization']").val();
+      var title = $("input[name='title']").val();
+      if (email == "" || organization == "" || title == "") {
+        alert("Please complete all fields.");
+        return;
+      }
+      var url = eemeConsole.setting.API.SIGNUP_URL;
+      var data = {
+        'email': email,
+        'organization': organization,
+        'title': title
+      }
+      $.post(url, data, function(data){
+        alert("Thanks for your interest! We will contact you soon.");
+        $("input[name='email']").val("");
+        $("input[name='organization']").val("");
+        $("input[name='title']").val("");
+      }).error(function(jqXHR, textStatus, errorThrown){
+        var msg = JSON.parse(jqXHR.responseText)
+        if ('error' in msg) {
+          msg = msg.error.message;
+        } else {
+          msg = "something went wrong.";
+        }
+        alert("Oops..." + msg);
+      });
+    });
+  });
+
+</script>
+<div class="large-8 large-centered columns">
+  <div class="login-box">
+    <div class="row">
+      <div class="large-6 columns">
+        <form id="login-form">
+          <div class="row">
+            <div class="large-12 columns">
+              <input name="email" placeholder="Email" type="text"></input>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-12 columns">
+              <input name="organization" placeholder="Your Organization" type="text"></input>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-12 columns">
+              <input name="title" placeholder="Your Title" type="text"></input>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-12 large-centered columns">
+              <input class="button expand" id="signup-submit-btn" type="submit" value="Sign Up"></input>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="large-6 columns">
+        <h2>
+          Welcome to Use Scalable Home Energy Analytics
+        </h2>
+        <p>
+          We will send you the information to login and guide about how to use our API service in few days right after you complete the form.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

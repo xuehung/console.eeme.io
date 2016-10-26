@@ -1,0 +1,36 @@
+<!doctype html>
+<head>
+<link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/default.min.css" rel="stylesheet"></link>
+<link rel="stylesheet" href="css/console.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="/js/js.cookies.js"></script>
+<script type="text/javascript" src="/js/settings.js"></script>
+<script type="text/javascript" src="/js/utils.js"></script>
+<script type="text/javascript" src="/js/auth.js"></script>
+<script type="text/javascript" src="/js/login.js"></script>
+</head>
+<body>
+<header>
+<div class="contain-to-grid fixed">
+  <!-- TOPBAR SECTION
+  -->
+  <nav class="top-bar" data-topbar="<%= true %>" role="navigation" style="max-width: none;">
+    <div class="title">
+      EEme Console
+    </div>
+  </nav>
+</div>
+</header>
+<div class="container">
+<div class="row" style="max-width: none; min-height:100%;">
+  <div class="small-10 columns" style="padding: 0px">
+    <div id="main" role="main" style="margin:0px">
+      <div class="content">
+        {{content}}
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</body>
