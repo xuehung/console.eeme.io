@@ -1,0 +1,51 @@
+---
+---
+
+/*
+ * Place all the styles exclusive to the header here.
+ */
+
+// color palette
+$blue-lagoon: #1693A7;
+$orange-energy: #fbaf42;
+$blue-energy: #00b1b0;
+
+header {
+  .top-bar {
+      background-color: $blue-lagoon;
+  }
+  font-family: "opensans_regular";
+  a {
+    font-family: "opensans_regular";
+    color: #424242;
+    font-size: 14px;
+  }
+  #logo-icon{
+    width: auto; 
+    height: 46px;
+    padding: 2px 10px 8px 10px;
+  }
+  #menu-items a{
+    text-transform: uppercase;
+  }
+  #login-links a{
+    font-family: "opensans_semibold";
+    text-transform: uppercase;
+    &.join {
+      color: $orange-energy;
+    }
+    &.login {
+      color: $blue-energy;
+    }
+  }
+  .header-hdiv{
+    top: 0px;
+    margin:0px;  
+    padding: 0px;    
+    border-width: 4px;
+    border-bottom-width:3px;
+    border-bottom-color: $orange-energy;
+    border-bottom-style: solid;
+    width: 100%;
+  }
+}

@@ -1,0 +1,30 @@
+---
+layout: master_layout
+---
+
+<div class="small-2 columns">
+    <div class="side-bar fixed" style="top: 50px; width: 200px;">
+        <ul class="side-nav">
+            <li>
+            <a href="explorer">Explorer</a>
+            </li>
+            <li>
+            <a href="credential">Settings</a>
+            </li>
+            <li>
+            <a href="analytics">Analytics Configuration</a>
+            </li>
+            </li>
+            <li>
+            <a href="javascript:eemeConsole.auth.logout();">Logout</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="small-10 columns" style="padding: 0px">
+    <div id="main" role="main" style="margin:0px">
+        <div class="content">
+            {{content}}
+        </div>
+    </div>
+</div>
